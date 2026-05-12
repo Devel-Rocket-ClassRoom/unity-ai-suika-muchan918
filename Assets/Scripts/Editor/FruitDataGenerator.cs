@@ -72,10 +72,9 @@ public static class FruitDataGenerator
 
     private static Sprite LoadSprite(string fruitName)
     {
-        // Try "FruitName 1.png" first, then "FruitName.png"
         string[] candidates = {
-            $"Assets/Sprites/{fruitName} 1.png",
             $"Assets/Sprites/{fruitName}.png",
+            $"Assets/Sprites/{fruitName} 1.png",
         };
         foreach (var path in candidates)
         {

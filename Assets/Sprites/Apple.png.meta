@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 9ed5e47ba4f6eb6408e0161bb1172c88
+guid: a0843181d048a6c48bb3dc1d0225fdf7
 labels:
 - UnityAI
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7116479204018306170
-    second: Dekopon 1_0
+      213: 7293598183456022363
+    second: Apple_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dekopon 1_0
+      name: Apple_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 683c8016edf2d3d90800000000000000
-      internalID: -7116479204018306170
+      spriteID: b5f945b97e0183560800000000000000
+      internalID: 7293598183456022363
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dekopon 1_0: -7116479204018306170
+      Apple_0: 7293598183456022363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
