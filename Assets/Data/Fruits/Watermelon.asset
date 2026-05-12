@@ -16,7 +16,7 @@ MonoBehaviour:
   fruitName: Watermelon
   sprite: {fileID: 0}
   color: {r: 0.05, g: 0.5, b: 0.15, a: 1}
-  radius: 1.1
+  radius: 1.25
   mergeScore: 0
   isDroppable: 0
   prefab: {fileID: 5492879510479017565, guid: 91fb4f2acff4e854bac7b26bb003e9b7, type: 3}

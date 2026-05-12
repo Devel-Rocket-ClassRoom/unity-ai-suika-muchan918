@@ -38,7 +38,7 @@ public static class FruitPrefabGenerator
             sr.color  = fruitData.sprite != null ? Color.white : fruitData.color;
 
             var col = go.GetComponent<CircleCollider2D>();
-            col.radius         = fruitData.radius;
+            col.radius         = 0.5f;   // Fruit.Init()이 localScale로 크기 결정
             col.sharedMaterial = mat;
 
             var saved = PrefabUtility.SaveAsPrefabAsset(go, path);

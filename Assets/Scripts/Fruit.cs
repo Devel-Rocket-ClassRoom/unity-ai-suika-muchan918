@@ -21,9 +21,13 @@ public class Fruit : MonoBehaviour
     public void Init(FruitData fruitData)
     {
         data = fruitData;
-        _sr.color      = data.sprite != null ? Color.white : data.color;
-        _sr.sprite     = data.sprite;
-        _col.radius    = data.radius;
+        _sr.sprite = data.sprite;
+        _sr.color  = data.sprite != null ? Color.white : data.color;
+
+        // 스프라이트는 1px/unit 기준 월드 크기 1.0 → localScale로 크기 맞춤
+        float diameter = data.radius * 2f;
+        transform.localScale = new Vector3(diameter, diameter, 1f);
+        _col.radius = 0.5f;   // 로컬 반지름 0.5 × scale = data.radius
     }
 
     void OnCollisionEnter2D(Collision2D col)
