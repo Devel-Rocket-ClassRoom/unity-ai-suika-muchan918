@@ -5,17 +5,17 @@ public static class FruitDataGenerator
 {
     private static readonly (string name, Color color, float radius, int score, bool droppable)[] FruitTable =
     {
-        ("Cherry",      new Color(0.80f, 0.05f, 0.05f), 0.25f,  2, true),
-        ("Strawberry",  new Color(0.95f, 0.20f, 0.20f), 0.33f,  3, true),
-        ("Grape",       new Color(0.55f, 0.10f, 0.75f), 0.42f,  4, true),
-        ("Dekopon",     new Color(1.00f, 0.55f, 0.00f), 0.51f,  5, true),
-        ("Persimmon",   new Color(0.90f, 0.27f, 0.00f), 0.60f,  6, true),
-        ("Apple",       new Color(0.95f, 0.40f, 0.40f), 0.68f,  7, false),
-        ("Pear",        new Color(0.80f, 0.80f, 0.10f), 0.78f,  8, false),
-        ("Peach",       new Color(1.00f, 0.70f, 0.65f), 0.88f,  9, false),
-        ("Pineapple",   new Color(1.00f, 0.90f, 0.00f), 1.00f, 10, false),
-        ("Melon",       new Color(0.60f, 0.85f, 0.35f), 1.12f, 11, false),
-        ("Watermelon",  new Color(0.05f, 0.50f, 0.15f), 1.25f,  0, false),
+        ("Cherry",      new Color(0.80f, 0.05f, 0.05f), 0.33f,  2, true),
+        ("Strawberry",  new Color(0.95f, 0.20f, 0.20f), 0.43f,  3, true),
+        ("Grape",       new Color(0.55f, 0.10f, 0.75f), 0.55f,  4, true),
+        ("Dekopon",     new Color(1.00f, 0.55f, 0.00f), 0.66f,  5, true),
+        ("Persimmon",   new Color(0.90f, 0.27f, 0.00f), 0.78f,  6, true),
+        ("Apple",       new Color(0.95f, 0.40f, 0.40f), 0.88f,  7, false),
+        ("Pear",        new Color(0.80f, 0.80f, 0.10f), 1.02f,  8, false),
+        ("Peach",       new Color(1.00f, 0.70f, 0.65f), 1.14f,  9, false),
+        ("Pineapple",   new Color(1.00f, 0.90f, 0.00f), 1.30f, 10, false),
+        ("Melon",       new Color(0.60f, 0.85f, 0.35f), 1.45f, 11, false),
+        ("Watermelon",  new Color(0.05f, 0.50f, 0.15f), 1.63f,  0, false),
     };
 
     [MenuItem("Suika/Generate Fruit Assets")]
