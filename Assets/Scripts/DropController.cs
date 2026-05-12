@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DropController : MonoBehaviour
 {
@@ -46,14 +47,15 @@ public class DropController : MonoBehaviour
         UpdateMouseTracking();
         UpdatePreviewPosition();
 
-        if (_canDrop && Input.GetMouseButtonDown(0))
+        if (_canDrop && Mouse.current.leftButton.wasPressedThisFrame)
             StartCoroutine(DoDrop());
     }
 
     // ── 마우스 추적 ─────────────────────────────────────────
     private void UpdateMouseTracking()
     {
-        Vector3 world = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+        Vector3 world = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0f));
         _prevTargetX      = _targetX;
         _targetX          = Mathf.Clamp(world.x, minX, maxX);
         _mouseVelocityX   = (_targetX - _prevTargetX) / Mathf.Max(Time.deltaTime, 0.001f);
