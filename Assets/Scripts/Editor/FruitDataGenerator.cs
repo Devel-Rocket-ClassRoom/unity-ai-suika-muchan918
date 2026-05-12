@@ -41,7 +41,7 @@ public static class FruitDataGenerator
 
             data.level       = i;
             data.fruitName   = fruitName;
-            data.sprite      = null;   // assign real sprite here when art is ready
+            data.sprite      = LoadSprite(fruitName);
             data.color       = color;
             data.radius      = radius;
             data.mergeScore  = score;
@@ -68,5 +68,20 @@ public static class FruitDataGenerator
         AssetDatabase.Refresh();
 
         Debug.Log("[Suika] Fruit assets generated. Menu: Suika > Generate Fruit Assets");
+    }
+
+    private static Sprite LoadSprite(string fruitName)
+    {
+        // Try "FruitName 1.png" first, then "FruitName.png"
+        string[] candidates = {
+            $"Assets/Sprites/{fruitName} 1.png",
+            $"Assets/Sprites/{fruitName}.png",
+        };
+        foreach (var path in candidates)
+        {
+            var s = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+            if (s != null) return s;
+        }
+        return null;
     }
 }
