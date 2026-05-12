@@ -16,7 +16,7 @@ MonoBehaviour:
   fruitName: Melon
   sprite: {fileID: 21300000, guid: 58766d49aa9c8284787cf872a3aa0104, type: 3}
   color: {r: 0.6, g: 0.85, b: 0.35, a: 1}
-  radius: 1.45
+  radius: 2
   mergeScore: 11
   isDroppable: 0
   prefab: {fileID: 6654100596572927752, guid: 13f9f4e9abad2a54cbc06ccfa3b13ee8, type: 3}

@@ -13,6 +13,14 @@ PrefabInstance:
       value: Watermelon
       objectReference: {fileID: 0}
     - target: {fileID: 2455233444613504385, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455233444613504385, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455233444613504385, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -66,7 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4b1c0af6b0c7ced4ea5a2e46fe28fb17, type: 2}
     - target: {fileID: 5148487050412954196, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_Radius
-      value: 1.63
+      value: 1.3272755
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148487050412954196, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0032932758
       objectReference: {fileID: 0}
     - target: {fileID: 7466321795392039275, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_Sprite
