@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DropController : MonoBehaviour
 {
@@ -7,33 +8,28 @@ public class DropController : MonoBehaviour
     [SerializeField] private FruitDatabase fruitDatabase;
 
     [Header("Container Bounds")]
-    [SerializeField] private float minX     = -3.0f;
-    [SerializeField] private float maxX     =  3.0f;
-    [SerializeField] private float dropY    =  9.5f;
+    [SerializeField] private float minX  = -3.0f;
+    [SerializeField] private float maxX  =  3.0f;
+    [SerializeField] private float dropY =  8.5f;
 
     [Header("Feel")]
-    [SerializeField] private float slideSpeed    = 14f;   // 미리보기 슬라이드 속도
-    [SerializeField] private float dropCooldown  = 0.7f;
-    [SerializeField] private float momentumScale = 0.12f; // 마우스 속도 → 수평 관성 배율
+    [SerializeField] private float slideSpeed   = 14f;
+    [SerializeField] private float dropCooldown = 0.7f;
 
     [Header("Next Preview")]
-    [SerializeField] private Transform nextPreviewAnchor;  // 다음 과일 표시 위치
+    [SerializeField] private Transform nextPreviewAnchor;
 
     private FruitData _currentData;
     private FruitData _nextData;
 
-    private GameObject   _previewGo;
+    private GameObject    _previewGo;
     private SpriteRenderer _previewSr;
     private LineRenderer   _dropLine;
-
-    private GameObject   _nextPreviewGo;
+    private GameObject    _nextPreviewGo;
 
     private float _currentX;
     private float _targetX;
-    private float _prevTargetX;
-    private float _mouseVelocityX;
-
-    private bool _canDrop = true;
+    private bool  _canDrop = true;
 
     void Start()
     {
@@ -46,17 +42,16 @@ public class DropController : MonoBehaviour
         UpdateMouseTracking();
         UpdatePreviewPosition();
 
-        if (_canDrop && Input.GetMouseButtonDown(0))
+        if (_canDrop && Mouse.current.leftButton.wasPressedThisFrame)
             StartCoroutine(DoDrop());
     }
 
-    // ── 마우스 추적 ─────────────────────────────────────────
     private void UpdateMouseTracking()
     {
-        Vector3 world = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        _prevTargetX      = _targetX;
-        _targetX          = Mathf.Clamp(world.x, minX, maxX);
-        _mouseVelocityX   = (_targetX - _prevTargetX) / Mathf.Max(Time.deltaTime, 0.001f);
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+        Vector3 world = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0f));
+        float r = _currentData != null ? _currentData.radius : 0f;
+        _targetX = Mathf.Clamp(world.x, minX + r, maxX - r);
     }
 
     private void UpdatePreviewPosition()
@@ -67,19 +62,15 @@ public class DropController : MonoBehaviour
         UpdateDropLine();
     }
 
-    // ── 드롭 ────────────────────────────────────────────────
     private IEnumerator DoDrop()
     {
         _canDrop = false;
 
         float dropX = _currentX;
-        float hVel  = _mouseVelocityX * momentumScale;
-
         DestroyPreview();
 
         var go = Instantiate(_currentData.prefab, new Vector3(dropX, dropY, 0f), Quaternion.identity);
         go.GetComponent<Fruit>().Init(_currentData);
-        go.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(hVel, 0f);
         GameOverDetector.IgnoreUntilTime = Time.time + 1f;
 
         yield return new WaitForSeconds(dropCooldown);
@@ -89,7 +80,6 @@ public class DropController : MonoBehaviour
         _canDrop = true;
     }
 
-    // ── 과일 선택 ────────────────────────────────────────────
     private void PickNextData()
     {
         var pool = fruitDatabase.GetDroppableFruits();
@@ -98,7 +88,6 @@ public class DropController : MonoBehaviour
         RefreshNextPreview();
     }
 
-    // ── 현재 과일 미리보기 ────────────────────────────────────
     private void ShowCurrentPreview()
     {
         DestroyPreview();
@@ -116,15 +105,14 @@ public class DropController : MonoBehaviour
         _currentX = 0f;
         _previewGo.transform.position = new Vector3(_currentX, dropY, 0f);
 
-        // 드롭 라인
         _dropLine = _previewGo.AddComponent<LineRenderer>();
-        _dropLine.positionCount  = 2;
-        _dropLine.startWidth     = 0.04f;
-        _dropLine.endWidth       = 0.04f;
-        _dropLine.useWorldSpace  = true;
-        _dropLine.material       = new Material(Shader.Find("Sprites/Default"));
-        _dropLine.startColor     = new Color(1f, 1f, 1f, 0.3f);
-        _dropLine.endColor       = new Color(1f, 1f, 1f, 0f);
+        _dropLine.positionCount = 2;
+        _dropLine.startWidth    = 0.04f;
+        _dropLine.endWidth      = 0.04f;
+        _dropLine.useWorldSpace = true;
+        _dropLine.material      = new Material(Shader.Find("Sprites/Default"));
+        _dropLine.startColor    = new Color(1f, 1f, 1f, 0.3f);
+        _dropLine.endColor      = new Color(1f, 1f, 1f, 0f);
         UpdateDropLine();
     }
 
@@ -143,7 +131,6 @@ public class DropController : MonoBehaviour
         _dropLine  = null;
     }
 
-    // ── 다음 과일 미리보기 ────────────────────────────────────
     private void RefreshNextPreview()
     {
         if (_nextPreviewGo != null) Destroy(_nextPreviewGo);
