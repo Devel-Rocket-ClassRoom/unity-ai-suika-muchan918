@@ -29,31 +29,31 @@
 
 ## Phase 2. 과일 프리팹 & 물리
 
-- [ ] 과일 컨테이너(통) 제작
-  - 바닥 + 좌우 벽 콜라이더 (`EdgeCollider2D`)
-  - `PhysicsMaterial2D` 설정 (마찰/탄성)
-  - 시각적 테두리 표현 (LineRenderer 또는 SpriteRenderer)
-- [ ] `Fruit.cs` 스크립트 작성
-  - `FruitData` 참조 및 비주얼 초기화 (color, radius)
+- [O] 과일 컨테이너(통) 제작
+  - 바닥 + 좌우 벽 `EdgeCollider2D` (폭 6.5 / 높이 9.0 units)
+  - `FruitPhysics.physicsMaterial2D` (friction=0.4, bounciness=0.1)
+  - `LineRenderer` 갈색 테두리, 카메라 orthoSize 조정
+- [O] `Fruit.cs` 스크립트 작성
+  - `FruitData` 참조 및 비주얼 초기화 (sprite / color, radius)
   - `OnCollisionEnter2D` 기반 머지 판정
-  - 중복 머지 방지 플래그
-- [ ] 과일 베이스 프리팹 생성
-  - `SpriteRenderer`
-  - `Rigidbody2D` (중력, 마찰, 탄성 설정)
-  - `CircleCollider2D` (레벨별 반지름)
-  - `Fruit.cs` 연결
-- [ ] 11종 과일 프리팹 완성 (FruitData별 color·radius 적용)
+  - `isMerging` 플래그로 동시 충돌 중복 머지 방지
+  - `MergeRequested` 정적 이벤트 발행 (Phase 3 MergeManager가 구독)
+- [O] 과일 베이스 프리팹 생성 (`Assets/Prefabs/Fruit.prefab`)
+  - `SpriteRenderer` / `Rigidbody2D`(Interpolate·Continuous) / `CircleCollider2D` / `Fruit.cs`
+- [O] 11종 과일 프리팹 완성 (`FruitPrefabGenerator` 에디터 유틸로 자동 생성)
+  - 실제 과일 스프라이트 연결 완료 (`Assets/Sprites/`)
 
 ---
 
 ## Phase 3. 머지 로직
 
-- [ ] `MergeManager.cs` 또는 `Fruit.cs` 내 머지 처리
-  - 같은 레벨 감지 시 두 과일 중간점에 다음 레벨 과일 생성
+- [ ] `MergeManager.cs` 작성
+  - `Fruit.MergeRequested` 이벤트 구독
+  - 두 과일 중간점에 다음 레벨 과일 생성 (`FruitDatabase` 참조)
   - 원본 두 과일 Destroy
   - 점수 추가 이벤트 발행
-- [ ] 수박(레벨 10) + 수박 → 둘 다 소멸 처리
-- [ ] 동시 충돌 버그 방지 (같은 프레임 중복 머지)
+- [ ] 수박(레벨 10) + 수박 → 둘 다 소멸 (보너스 점수)
+- [O] 동시 충돌 버그 방지 — `isMerging` 플래그 (Fruit.cs Phase 2에서 구현 완료)
 
 ---
 
@@ -99,10 +99,10 @@
 - [ ] 머지 이펙트 (파티클 또는 애니메이션)
 - [ ] 효과음 (드롭, 머지, 게임 오버)
 - [ ] 배경 및 컨테이너 아트 적용
-- [ ] 실제 과일 스프라이트로 교체
+- [O] 실제 과일 스프라이트 연결 (Phase 2에서 완료)
 
 ---
 
 ## 현재 진행 단계
 
-**Phase 1 완료 → Phase 2 (과일 프리팹 & 물리) 진행 중**
+**Phase 2 완료 → Phase 3 (머지 로직) 시작 전**
