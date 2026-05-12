@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: d8012fcbc27f3fe4083c2a41ef7ca94d
+guid: c1b4e012abdb8a8479e2e4bccf6f8dad
 labels:
 - UnityAI
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 282944973423589212
-    second: Peach 1_0
+      213: -5670339388207800344
+    second: Pear_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Peach 1_0
+      name: Pear_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5735e744f83de300800000000000000
-      internalID: 282944973423589212
+      spriteID: 8efd7f18e58ee41b0800000000000000
+      internalID: -5670339388207800344
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Peach 1_0: 282944973423589212
+      Pear_0: -5670339388207800344
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

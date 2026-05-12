@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitData
   level: 2
   fruitName: Grape
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 9d7ad4b9b1473f349af7b828f4490829, type: 3}
   color: {r: 0.55, g: 0.1, b: 0.75, a: 1}
   radius: 0.27
   mergeScore: 4
   isDroppable: 1
+  prefab: {fileID: 9000731402501901788, guid: 89f05b6974a76f8458d19ee35b58858f, type: 3}

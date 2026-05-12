@@ -41,8 +41,12 @@ public static class FruitPrefabGenerator
             col.radius         = fruitData.radius;
             col.sharedMaterial = mat;
 
-            PrefabUtility.SaveAsPrefabAsset(go, path);
+            var saved = PrefabUtility.SaveAsPrefabAsset(go, path);
             Object.DestroyImmediate(go);
+
+            // FruitData.prefab 필드에 생성된 프리팹 연결
+            fruitData.prefab = saved;
+            EditorUtility.SetDirty(fruitData);
         }
 
         AssetDatabase.SaveAssets();

@@ -19,3 +19,4 @@ MonoBehaviour:
   radius: 0.85
   mergeScore: 10
   isDroppable: 0
+  prefab: {fileID: 1213547985837079452, guid: 232074da40053fc4c909239add27d3ca, type: 3}
