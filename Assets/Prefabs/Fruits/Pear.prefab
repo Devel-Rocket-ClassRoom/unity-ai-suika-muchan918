@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 500393759175953910, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3f3ebadde3e8f1f48b831fe0e73de6df, type: 3}
+      objectReference: {fileID: 21300000, guid: c1b4e012abdb8a8479e2e4bccf6f8dad, type: 3}
     - target: {fileID: 500393759175953910, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -64,10 +64,6 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: b9dd44664e51cc54a9d0e4a1ce50c276, type: 2}
-    - target: {fileID: 5148487050412954196, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
-      propertyPath: m_Radius
-      value: 0.62
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

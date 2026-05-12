@@ -16,7 +16,7 @@ MonoBehaviour:
   fruitName: Strawberry
   sprite: {fileID: 0}
   color: {r: 0.95, g: 0.2, b: 0.2, a: 1}
-  radius: 0.2
+  radius: 0.33
   mergeScore: 3
   isDroppable: 1
   prefab: {fileID: 5391496294366535765, guid: 01bbc988687e68a4b99c9f3400d82cce, type: 3}
