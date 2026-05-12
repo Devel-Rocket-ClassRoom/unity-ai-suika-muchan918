@@ -23,10 +23,7 @@ public class Fruit : MonoBehaviour
         _sr.sprite = data.sprite;
         _sr.color  = data.sprite != null ? Color.white : data.color;
 
-        // 부모 scale은 (1,1,1) 고정 — 콜라이더 반지름을 직접 설정
-        _col.radius = data.radius;
-
-        // Visual 자식 크기는 프리팹에 저장된 값을 사용 (Inspector에서 독립 조작 가능)
+        // 콜라이더 반지름과 Visual 크기는 프리팹에 저장된 값을 그대로 사용
     }
 
     void OnCollisionEnter2D(Collision2D col)
