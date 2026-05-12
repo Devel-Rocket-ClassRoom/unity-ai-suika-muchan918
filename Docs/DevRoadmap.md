@@ -47,16 +47,16 @@
 
 ## Phase 3. 머지 로직
 
-- [ ] `MergeManager.cs` 작성
+- [O] `MergeManager.cs` 작성
   - `Fruit.MergeRequested` 이벤트 구독
   - 두 과일 중간점에 다음 레벨 과일 생성 (`FruitDatabase` 참조)
   - 원본 두 과일 Destroy
   - 점수 추가 이벤트 발행 (`OnScoreAdded`)
-- [ ] 수박(레벨 10) + 수박 → 둘 다 소멸 (보너스 점수)
+- [O] 수박(레벨 10) + 수박 → 둘 다 소멸 (보너스 100점)
 - [O] 동시 충돌 버그 방지 — `isMerging` 플래그 (Fruit.cs Phase 2에서 구현 완료)
-- [ ] 테스트용 스페이스바 드롭 (`TestDropper.cs`)
+- [O] 테스트용 스페이스바 드롭 (`TestDropper.cs`)
   - 스페이스바 입력 시 컨테이너 상단 중앙에서 드롭 가능한 5종 중 랜덤 과일 낙하
-  - Phase 4 DropController 구현 전 머지 로직 검증용 임시 기능
+  - 머지 동작 검증 완료
 
 ---
 
@@ -108,4 +108,4 @@
 
 ## 현재 진행 단계
 
-**Phase 2 완료 → Phase 3 (머지 로직) 시작 전**
+**Phase 3 완료 → Phase 4 (드롭 컨트롤러) 시작 전**
