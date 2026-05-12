@@ -13,6 +13,14 @@ PrefabInstance:
       value: Melon
       objectReference: {fileID: 0}
     - target: {fileID: 2455233444613504385, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455233444613504385, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455233444613504385, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -66,7 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: eb899819e3935fb4cb6f132048adfa05, type: 2}
     - target: {fileID: 5148487050412954196, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_Radius
-      value: 1.45
+      value: 1.0976113
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148487050412954196, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.045963645
       objectReference: {fileID: 0}
     - target: {fileID: 7466321795392039275, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_Sprite

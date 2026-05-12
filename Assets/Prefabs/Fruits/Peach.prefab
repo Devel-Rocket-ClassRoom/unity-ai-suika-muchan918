@@ -13,6 +13,14 @@ PrefabInstance:
       value: Peach
       objectReference: {fileID: 0}
     - target: {fileID: 2455233444613504385, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455233444613504385, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455233444613504385, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -66,7 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 44582e80adcb8044ea912cefbf6b70be, type: 2}
     - target: {fileID: 5148487050412954196, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_Radius
-      value: 1.14
+      value: 0.50914824
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148487050412954196, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10045399
       objectReference: {fileID: 0}
     - target: {fileID: 7466321795392039275, guid: 27f4f17ce209ddc41a48f06f5f223f74, type: 3}
       propertyPath: m_Sprite
