@@ -16,7 +16,7 @@ MonoBehaviour:
   fruitName: Persimmon
   sprite: {fileID: 21300000, guid: c6892cb5d747a7a42b622e76719110b9, type: 3}
   color: {r: 0.9, g: 0.27, b: 0, a: 1}
-  radius: 0.6
+  radius: 0.78
   mergeScore: 6
   isDroppable: 1
   prefab: {fileID: 4293647037684129273, guid: 77719c53f657a7445ba10ce6c9d3ed81, type: 3}

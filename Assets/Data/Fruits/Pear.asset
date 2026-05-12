@@ -16,7 +16,7 @@ MonoBehaviour:
   fruitName: Pear
   sprite: {fileID: 21300000, guid: c1b4e012abdb8a8479e2e4bccf6f8dad, type: 3}
   color: {r: 0.8, g: 0.8, b: 0.1, a: 1}
-  radius: 0.78
+  radius: 1.02
   mergeScore: 8
   isDroppable: 0
   prefab: {fileID: 7154125676272995064, guid: 90ef189a3be89de479a8674ff2820885, type: 3}
