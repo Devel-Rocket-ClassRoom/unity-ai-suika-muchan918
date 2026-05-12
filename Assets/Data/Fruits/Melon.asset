@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitData
   level: 9
   fruitName: Melon
-  sprite: {fileID: 21300000, guid: 0f5513ce9db18534a8e85501d7aaa1d0, type: 3}
+  sprite: {fileID: 21300000, guid: 58766d49aa9c8284787cf872a3aa0104, type: 3}
   color: {r: 0.6, g: 0.85, b: 0.35, a: 1}
   radius: 1.45
   mergeScore: 11

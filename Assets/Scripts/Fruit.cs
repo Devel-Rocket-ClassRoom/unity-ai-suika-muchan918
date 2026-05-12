@@ -2,7 +2,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CircleCollider2D))]
-[RequireComponent(typeof(SpriteRenderer))]
 public class Fruit : MonoBehaviour
 {
     public FruitData data;
@@ -14,7 +13,7 @@ public class Fruit : MonoBehaviour
 
     void Awake()
     {
-        _sr  = GetComponent<SpriteRenderer>();
+        _sr  = GetComponentInChildren<SpriteRenderer>();
         _col = GetComponent<CircleCollider2D>();
     }
 
@@ -24,10 +23,7 @@ public class Fruit : MonoBehaviour
         _sr.sprite = data.sprite;
         _sr.color  = data.sprite != null ? Color.white : data.color;
 
-        // 스프라이트는 1px/unit 기준 월드 크기 1.0 → localScale로 크기 맞춤
-        float diameter = data.radius * 2f;
-        transform.localScale = new Vector3(diameter, diameter, 1f);
-        _col.radius = 0.5f;   // 로컬 반지름 0.5 × scale = data.radius
+        // 콜라이더 반지름과 Visual 크기는 프리팹에 저장된 값을 그대로 사용
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -41,10 +37,8 @@ public class Fruit : MonoBehaviour
         isMerging       = true;
         other.isMerging = true;
 
-        // MergeManager(Phase 3)가 실제 스폰을 담당. 여기선 이벤트만 발행.
         MergeRequested?.Invoke(this, other);
     }
 
-    // Phase 3의 MergeManager가 구독
     public static event System.Action<Fruit, Fruit> MergeRequested;
 }

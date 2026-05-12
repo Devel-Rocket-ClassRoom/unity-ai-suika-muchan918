@@ -80,6 +80,7 @@ public class DropController : MonoBehaviour
         var go = Instantiate(_currentData.prefab, new Vector3(dropX, dropY, 0f), Quaternion.identity);
         go.GetComponent<Fruit>().Init(_currentData);
         go.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(hVel, 0f);
+        GameOverDetector.IgnoreUntilTime = Time.time + 1f;
 
         yield return new WaitForSeconds(dropCooldown);
 
