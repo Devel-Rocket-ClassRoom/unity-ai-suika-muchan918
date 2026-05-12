@@ -76,10 +76,13 @@
 
 ## Phase 5. 게임 오버 감지
 
-- [ ] 상단 데드라인 트리거 설정 (`BoxCollider2D` isTrigger)
-- [ ] `GameOverDetector.cs` 작성
-  - 과일이 트리거 라인 위에 일정 시간(약 3초) 이상 머무르면 게임 오버
-- [ ] `GameManager.cs`에서 게임 오버 상태 관리
+- [O] 상단 데드라인 트리거 설정 (`BoxCollider2D` isTrigger, y=8.8, 빨간 LineRenderer)
+- [O] `GameOverDetector.cs` 작성
+  - 과일이 트리거 라인 위에 3초 이상 머무르면 `OnGameOver` 정적 이벤트 발행
+  - 드롭 직후 1초 오탐 방지 (`IgnoreUntilTime`)
+- [O] `GameManager.cs` 게임 오버 상태 관리
+  - 모든 `Rigidbody2D` isKinematic 전환, `DropController` 비활성화
+  - R키로 씬 리로드 재시작
 
 ---
 
@@ -111,4 +114,4 @@
 
 ## 현재 진행 단계
 
-**Phase 4 완료 → Phase 5 (게임 오버 감지) 시작 전**
+**Phase 5 완료 → Phase 6 (점수 시스템) 시작 전**

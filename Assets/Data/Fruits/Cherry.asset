@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitData
   level: 0
   fruitName: Cherry
-  sprite: {fileID: 21300000, guid: 6089fb6aa19b81d438d7126ca2281114, type: 3}
+  sprite: {fileID: 21300000, guid: b351145ba1df18749b3db77e2008c7c0, type: 3}
   color: {r: 0.8, g: 0.05, b: 0.05, a: 1}
   radius: 0.33
   mergeScore: 2
