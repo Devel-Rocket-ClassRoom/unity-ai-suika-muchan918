@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitData
   level: 10
   fruitName: Watermelon
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: cf804367051c7af498a8d8870f876ed9, type: 3}
   color: {r: 0.05, g: 0.5, b: 0.15, a: 1}
   radius: 1.1
   mergeScore: 0

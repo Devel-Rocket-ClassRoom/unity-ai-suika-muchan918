@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 0f5513ce9db18534a8e85501d7aaa1d0
+guid: 97d9b57320f8e8344b1fcac83951161c
 labels:
 - UnityAI
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3776312371561069292
-    second: Melon_0
+      213: -4340144702325716867
+    second: Strawberry 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Melon_0
+      name: Strawberry 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cea7fcb1818286430800000000000000
-      internalID: 3776312371561069292
+      spriteID: d7805186365b4c3c0800000000000000
+      internalID: -4340144702325716867
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Melon_0: 3776312371561069292
+      Strawberry 1_0: -4340144702325716867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
