@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class DropController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class DropController : MonoBehaviour
 
     [Header("Next Preview")]
     [SerializeField] private Transform nextPreviewAnchor;  // 다음 과일 표시 위치
+    [SerializeField] private Image nextFruitUIImage;       // Canvas UI 이미지
 
     private FruitData _currentData;
     private FruitData _nextData;
@@ -142,6 +144,15 @@ public class DropController : MonoBehaviour
     // ── 다음 과일 미리보기 ────────────────────────────────────
     private void RefreshNextPreview()
     {
+        // Canvas UI 이미지 업데이트
+        if (nextFruitUIImage != null)
+        {
+            nextFruitUIImage.sprite = _nextData.sprite;
+            nextFruitUIImage.color  = _nextData.sprite != null ? Color.white : _nextData.color;
+            return;
+        }
+
+        // fallback: world-space 미리보기
         if (_nextPreviewGo != null) Destroy(_nextPreviewGo);
         if (nextPreviewAnchor == null) return;
 
