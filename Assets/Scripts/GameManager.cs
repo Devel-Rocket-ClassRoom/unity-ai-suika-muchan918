@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        ScoreManager.Reset();
         State = GameState.Playing;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
