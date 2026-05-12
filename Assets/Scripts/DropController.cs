@@ -13,9 +13,8 @@ public class DropController : MonoBehaviour
     [SerializeField] private float dropY    =  9.5f;
 
     [Header("Feel")]
-    [SerializeField] private float slideSpeed    = 14f;   // 미리보기 슬라이드 속도
-    [SerializeField] private float dropCooldown  = 0.7f;
-    [SerializeField] private float momentumScale = 0.12f; // 마우스 속도 → 수평 관성 배율
+    [SerializeField] private float slideSpeed   = 14f;
+    [SerializeField] private float dropCooldown = 0.7f;
 
     [Header("Next Preview")]
     [SerializeField] private Transform nextPreviewAnchor;  // 다음 과일 표시 위치
@@ -31,8 +30,6 @@ public class DropController : MonoBehaviour
 
     private float _currentX;
     private float _targetX;
-    private float _prevTargetX;
-    private float _mouseVelocityX;
 
     private bool _canDrop = true;
 
@@ -56,9 +53,8 @@ public class DropController : MonoBehaviour
     {
         Vector2 screenPos = Mouse.current.position.ReadValue();
         Vector3 world = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0f));
-        _prevTargetX      = _targetX;
-        _targetX          = Mathf.Clamp(world.x, minX, maxX);
-        _mouseVelocityX   = (_targetX - _prevTargetX) / Mathf.Max(Time.deltaTime, 0.001f);
+        float r = _currentData != null ? _currentData.radius : 0f;
+        _targetX = Mathf.Clamp(world.x, minX + r, maxX - r);
     }
 
     private void UpdatePreviewPosition()
@@ -75,13 +71,11 @@ public class DropController : MonoBehaviour
         _canDrop = false;
 
         float dropX = _currentX;
-        float hVel  = _mouseVelocityX * momentumScale;
 
         DestroyPreview();
 
         var go = Instantiate(_currentData.prefab, new Vector3(dropX, dropY, 0f), Quaternion.identity);
         go.GetComponent<Fruit>().Init(_currentData);
-        go.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(hVel, 0f);
         GameOverDetector.IgnoreUntilTime = Time.time + 1f;
 
         yield return new WaitForSeconds(dropCooldown);

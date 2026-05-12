@@ -193,9 +193,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropController
   fruitDatabase: {fileID: 11400000, guid: a0133541396122f4c877b8bd2a03c238, type: 2}
-  minX: -3
-  maxX: 3
-  dropY: 9.5
+  minX: -3.3
+  maxX: 3.3
+  dropY: 8.7
   slideSpeed: 14
   dropCooldown: 0.7
   momentumScale: 0.12
@@ -380,7 +380,7 @@ Transform:
   m_GameObject: {fileID: 599795458}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.8, z: 0}
+  m_LocalPosition: {x: 0, y: 8.0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
